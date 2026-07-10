@@ -32,11 +32,12 @@ img{
     overflow:hidden;
     box-shadow:0 4px 12px rgba(0,0,0,.25);
     z-index:999;
-    transition:.25s ease;
+    transition:.3s ease;
 }
 
 .wellgrow-logo:hover{
-    transform:scale(1.06);
+    opacity:1;
+    transform:scale(1.08);
 }
 
 .wellgrow-logo img{
@@ -250,7 +251,8 @@ logo.addEventListener("click", function(e){
 
     if(menuOpen){
 
-        logo.style.transform="rotate(180deg)";
+        logo.style.transform="rotate(45deg)";
+        logo.style.opacity="1";
         topBtn.classList.add("show");
         mapsBtn.classList.add("show");
         instagramBtn.classList.add("show");
@@ -258,6 +260,7 @@ logo.addEventListener("click", function(e){
     }else{
 
         logo.style.transform="rotate(0deg)";
+        logo.style.opacity="0.75";
         topBtn.classList.remove("show");
         mapsBtn.classList.remove("show");
         instagramBtn.classList.remove("show");

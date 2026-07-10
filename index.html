@@ -44,6 +44,40 @@ img{
     display:block;
 }
 
+.top-btn{
+    position:fixed;
+    right:22px;
+    bottom:80px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(15px);
+
+    transition:.25s ease;
+}
+
+.top-btn.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+    
 </style>
 
 </head>
@@ -64,19 +98,41 @@ img{
 <img src="12.png">
 <img src="13.png">
 
+<a href="#"
+   class="top-btn"
+   id="topBtn"
+   onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+⬆
+</a>
+    
 <!-- logo Wellgrow -->
 <a href="https://www.instagram.com/wellgrow.coffee" target="_blank" class="wellgrow-logo">
     <img src="logo.png" alt="Wellgrow">
 </a>
 
-    <script>
+ <script>
 const logo = document.querySelector(".wellgrow-logo");
+const topBtn = document.getElementById("topBtn");
+
+let menuOpen = false;
 
 logo.addEventListener("click", function(e){
 
     e.preventDefault();
 
-    logo.style.transform="rotate(180deg)";
+    menuOpen = !menuOpen;
+
+    if(menuOpen){
+
+        logo.style.transform="rotate(180deg)";
+        topBtn.classList.add("show");
+
+    }else{
+
+        logo.style.transform="rotate(0deg)";
+        topBtn.classList.remove("show");
+
+    }
 
 });
 </script>

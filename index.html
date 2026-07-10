@@ -69,5 +69,17 @@ img{
     <img src="logo.png" alt="Wellgrow">
 </a>
 
+    <script>
+const logo = document.querySelector(".wellgrow-logo");
+
+logo.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    logo.style.transform="rotate(180deg)";
+
+});
+</script>
+    
 </body>
 </html>

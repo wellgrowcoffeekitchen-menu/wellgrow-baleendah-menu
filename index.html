@@ -22,26 +22,59 @@ img{
 
 /* logo */
 
-.wellgrow-logo{
+/* Floating Menu */
+
+.fab{
     position:fixed;
     right:18px;
     bottom:18px;
+    z-index:999;
+}
+
+.main-button{
     width:50px;
     height:50px;
     border-radius:50%;
     overflow:hidden;
+    cursor:pointer;
     box-shadow:0 4px 12px rgba(0,0,0,.25);
-    z-index:999;
     transition:.25s ease;
 }
 
-.wellgrow-logo:hover{
+.main-button:hover{
     transform:scale(1.06);
 }
 
-.wellgrow-logo img{
+.main-button img{
     width:100%;
-    display:block;
+    height:100%;
+    object-fit:cover;
+}
+
+.menu-item{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:20px;
+    margin-bottom:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+
+    opacity:0;
+    transform:translateY(20px);
+    pointer-events:none;
+
+    transition:.25s ease;
+}
+
+.fab.open .menu-item{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
 }
 
 </style>
@@ -64,10 +97,37 @@ img{
 <img src="12.png">
 <img src="13.png">
 
-<!-- logo Wellgrow -->
-<a href="https://www.instagram.com/wellgrow.coffee" target="_blank" class="wellgrow-logo">
-    <img src="logo.png" alt="Wellgrow">
-</a>
+<div class="fab" id="fab">
+
+    <a class="menu-item"
+       href="#"
+       onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+       ⬆
+    </a>
+
+    <a class="menu-item"
+       href="https://share.google/YSjF7dEFzJCeKEadr"
+       target="_blank">
+       📍
+    </a>
+
+    <a class="menu-item"
+       href="https://instagram.com/Wellgrow.coffee"
+       target="_blank">
+       📷
+    </a>
+
+    <a class="menu-item"
+       href="https://wa.me/6281212898383"
+       target="_blank">
+       💬
+    </a>
+
+    <div class="main-button" id="mainButton">
+        <img src="logo.png" alt="Wellgrow">
+    </div>
+
+</div>
 
 </body>
 </html>

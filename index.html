@@ -77,6 +77,39 @@ img{
     pointer-events:auto;
     transform:translateY(0);
 }
+.maps-btn{
+    position:fixed;
+    right:22px;
+    bottom:130px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(15px);
+
+    transition:.25s ease;
+}
+
+.maps-btn.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
     
 </style>
 
@@ -104,6 +137,13 @@ img{
    onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
 ⬆
 </a>
+<a href="https://share.google/YSjF7dEFzJCeKEadr"
+   target="_blank"
+   class="maps-btn"
+   id="mapsBtn">
+📍
+</a>
+
     
 <!-- logo Wellgrow -->
 <a href="https://www.instagram.com/wellgrow.coffee" target="_blank" class="wellgrow-logo">
@@ -113,7 +153,8 @@ img{
  <script>
 const logo = document.querySelector(".wellgrow-logo");
 const topBtn = document.getElementById("topBtn");
-
+const mapsBtn = document.getElementById("mapsBtn");
+     
 let menuOpen = false;
 
 logo.addEventListener("click", function(e){
@@ -126,12 +167,14 @@ logo.addEventListener("click", function(e){
 
         logo.style.transform="rotate(180deg)";
         topBtn.classList.add("show");
-
+        mapsBtn.classList.add("show");
+        
     }else{
 
         logo.style.transform="rotate(0deg)";
         topBtn.classList.remove("show");
-
+        mapsBtn.classList.remove("show");
+        
     }
 
 });

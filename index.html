@@ -110,6 +110,74 @@ img{
     pointer-events:auto;
     transform:translateY(0);
 }
+
+.instagram-btn{
+    position:fixed;
+    right:22px;
+    bottom:180px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(15px);
+
+    transition:.25s ease;
+}
+
+.instagram-btn.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+    .whatsapp-btn{
+    position:fixed;
+    right:22px;
+    bottom:230px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(15px);
+
+    transition:.25s ease;
+}
+
+.whatsapp-btn.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
     
 </style>
 
@@ -144,6 +212,19 @@ img{
 📍
 </a>
 
+<a href="https://www.instagram.com/wellgrow.coffee"
+   target="_blank"
+   class="instagram-btn"
+   id="instagramBtn">
+📷
+</a>
+
+<a href="https://wa.me/6281234567890"
+   target="_blank"
+   class="whatsapp-btn"
+   id="whatsappBtn">
+💬
+</a>
     
 <!-- logo Wellgrow -->
 <a href="https://www.instagram.com/wellgrow.coffee" target="_blank" class="wellgrow-logo">
@@ -154,7 +235,8 @@ img{
 const logo = document.querySelector(".wellgrow-logo");
 const topBtn = document.getElementById("topBtn");
 const mapsBtn = document.getElementById("mapsBtn");
-     
+const instagramBtn = document.getElementById("instagramBtn");
+const whatsappBtn = document.getElementById("whatsappBtn"); 
 let menuOpen = false;
 
 logo.addEventListener("click", function(e){
@@ -168,13 +250,15 @@ logo.addEventListener("click", function(e){
         logo.style.transform="rotate(180deg)";
         topBtn.classList.add("show");
         mapsBtn.classList.add("show");
-        
+        instagramBtn.classList.add("show");
+        whatsappBtn.classList.add("show");
     }else{
 
         logo.style.transform="rotate(0deg)";
         topBtn.classList.remove("show");
         mapsBtn.classList.remove("show");
-        
+        instagramBtn.classList.remove("show");
+        whatsappBtn.classList.remove("show");
     }
 
 });
